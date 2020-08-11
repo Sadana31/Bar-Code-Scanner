@@ -42,6 +42,7 @@ export default class App extends React.Component {
         if(buttonState==="clicked" && hasCameraPermissions){
             return(
               <View style={styles.container}>
+                <Text style={styles.header}>BAR CODE SCANNER</Text>
                 <Image source={require("./assets/img.jpg")} />
               <BarCodeScanner 
                 onBarCodeScanned={scanned ?undefined :this.handleBarCodeScanned}
@@ -52,6 +53,7 @@ export default class App extends React.Component {
         else if (buttonState==="normal"){
             return(
                 <View style={styles.container}>
+                <Text style={styles.header}>BAR CODE SCANNER</Text>
                   <Image source={require("./assets/img.jpg")} />
                     <Text style={styles.text}>
                         {hasCameraPermissions===true
@@ -94,6 +96,12 @@ const styles=StyleSheet.create({
       color: "#ffffff",
       marginTop: 20,
   },
+  header: {
+    fontSize:30,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#000000",
+},
     container: {
         flex: 1,
          justifyContent: "center", 
